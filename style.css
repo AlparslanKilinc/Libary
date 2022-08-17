@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Assistant-Regular;
+    src: url(./Assistant-Font/Assistant-Regular.ttf);
+}
+@font-face {
+    font-family: Assistant-Bold;
+    src: url(./Assistant-Font/Assistant-Bold.ttf);
+}
+@font-face {
+    font-family: Assistant-Light;
+    src: url(./Assistant-Font/Assistant-Light.ttf);
+}
+
+* {
+    box-sizing: border-box;
+  }
+  :root{
+    --font-Regular: Assistant-Regular;
+    --font-Bold: Assistant-Bold;
+    --font-Light: Assistant-Light;
+}
+html,body{
+    height: 100%;
+    margin: 0;
+    font-family: var(--font-Regular);
+}
