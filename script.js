@@ -31,16 +31,3 @@ class Book {
 
 }
 
-let book1 = new Book();
-let content= document.getElementById("Content");
-console.log(content);
-
-let text = book1.toString();
-let text_box=document.createElement("p");
-text_box.textContent= text;
-
-let book = document.createElement("div");
-book.classList.add("book-box");
-book.appendChild(text_box)
-
-content.appendChild(book);
