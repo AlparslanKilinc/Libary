@@ -24,10 +24,14 @@ class Book {
         this.pages=pages;
         this.read=read;
     }
-    
-    toString(){
-        return this.title+ "\n" + this.author +  "\n" + this.pages
-    }
-
 }
+
+/// Document Elements
+let form = document.getElementById("book-form");
+
+
+/// Form
+let showForm= () => {form.style.display='flex';}
+let closeForm = ()=>{form.style.display='none';}
+
 
