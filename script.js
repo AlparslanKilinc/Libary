@@ -9,7 +9,8 @@ class Library{
     }
 
     removeBook(book){
-        this.library.pop(book);
+        let index = this.library.indexOf(book);
+        this.library.splice(index,1);
     }
 
     getArray(){
@@ -30,14 +31,12 @@ class Book {
     }
 }
 
+
 let library= new Library();
 let content_box=[];
 /// Document Elements
 let form = document.getElementById("book-form");
 let content= document.getElementById("content");
-
-
-
 
 /// Form
 let showForm= () => {form.style.display='flex';}
@@ -55,8 +54,8 @@ let collectData = (event) =>{
     let book = new Book(title,author,pages,read);
     library.addBook(book);
     addToContent();
-    console.log("12");
 }
+
 
 
 let create_book_box = (book) =>{
@@ -65,17 +64,21 @@ let create_book_box = (book) =>{
     let author= document.createElement("p");
     let pages= document.createElement("p");
     let read= document.createElement("p");
-    
-    title.textContent=book.title;
-    author.textContent=book.author;
-    pages.textContent=book.pages;
+    let delete_btn=document.createElement("button");
+    delete_btn.textContent="Remove";  
+    delete_btn.addEventListener("click", () => remove_Content(book)); 
+   
+    title.textContent= "Title:"+" "+book.title;
+    author.textContent="Author:"+" "+book.author;
+    pages.textContent="Page Amount:"+" "+book.pages;
     if(book.read) read.textContent="Completed";
     else read.textContent="In Progress";
-
+  
     box.appendChild(title);
     box.appendChild(author);
     box.appendChild(pages);
     box.appendChild(read);
+    box.appendChild(delete_btn);
     
     box.classList.add("book-box");
     return box;
@@ -83,15 +86,24 @@ let create_book_box = (book) =>{
 
 /// Adding Books to Content
 let addToContent = () =>{
-
+    content.innerHTML="";
+    content_box=[];
     for(let book of library.getArray()){
         if (content_box.includes(book.title)) continue;
        content_box.push(book.title);
        let book_box = create_book_box(book);
        content.appendChild(book_box);
     }
-
 }
+
+let remove_Content = (book) =>{
+    let index = content_box.indexOf(book.title);
+    content_box.splice(index,1);
+    library.removeBook(book);
+    addToContent();
+}
+
+
 
 
 
