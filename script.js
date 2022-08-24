@@ -95,21 +95,27 @@ let create_book_box = (book) =>{
     } 
     else{
         read_btn.textContent="In Progress";
-        read_btn.style.backgroundColor="#D22B2B";
+        read_btn.style.backgroundColor="#E2D1F9";
     }
 
    
-    title.textContent= "Title:"+" "+book.title;
+    title.textContent=book.title;
     author.textContent="Author:"+" "+book.author;
     pages.textContent="Page Amount:"+" "+book.pages;
     
+    let up_box=document.createElement("div");
+    let btm_box=document.createElement("div");
 
-    box.appendChild(title);
-    box.appendChild(author);
-    box.appendChild(pages);
-    box.appendChild(read_btn);
-    box.appendChild(delete_btn);
+    up_box.appendChild(title);
+    up_box.appendChild(author);
+    up_box.appendChild(pages);
+    btm_box.appendChild(read_btn);
+    btm_box.appendChild(delete_btn);
+    box.appendChild(up_box);
+    box.appendChild(btm_box);
     
+    up_box.classList.add("box_up");
+    btm_box.classList.add("box_btm");
     box.classList.add("book-box");
     return box;
 }
@@ -132,7 +138,7 @@ let update_read = (book,read_btn) => {
     } 
     else{
         read_btn.textContent="In Progress";
-        read_btn.style.backgroundColor="#D22B2B";
+        read_btn.style.backgroundColor="#E2D1F9";
     }
 }
 
