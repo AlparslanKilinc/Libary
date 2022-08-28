@@ -1,4 +1,4 @@
 # Libary
-KEEPS TRACK OF THE BOOKS YOU HAVE READ AND IN PROGRESS OF READING. WEBSITE GETS INFORMATION OF THE BOOKS BY COLLECTING DATA FROM USER VIA FORM AND DISPLAYS THEM. PROGRAM USES OBJECTS AND CREATES A LIBRARY OF THE DATA
+Keeps track of the books you have read and are in the progress of reading. the website gets information about the books by collecting data from users via the form and displaying them. the program uses objects and creates a library of data.
 
 Live Preview:https://alparslankilinc.github.io/Library/
